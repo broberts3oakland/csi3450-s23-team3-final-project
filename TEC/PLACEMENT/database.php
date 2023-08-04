@@ -52,3 +52,24 @@ function SELECT_All_from_Query($conn, $Table_Name)
         echo "<br> 0 results";
         }
 }
+
+function Create_Table($conn, $Table_Name, $Table_Signature)
+{
+
+    // Convert dictionary to array so it's easier to create the table
+    $Columns =  implode(" ",$Table_Signature);
+
+    $sql = "CREATE TABLE IF NOT EXISTS {$Table_Name}(
+        {$Columns}
+      ) Engine=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
+
+if ($conn->query($sql) === TRUE) 
+{
+  echo "Table created successfully";
+} else 
+{
+  echo "<br> Error creating table: " . $conn->error;
+}
+
+
+}

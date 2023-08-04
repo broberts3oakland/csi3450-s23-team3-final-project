@@ -10,20 +10,18 @@
 require_once('database.php');
 $conn = Connect_to_Database();
 
-$Table_Name = "PLACEMENT";
-$sql = "CREATE TABLE IF NOT EXISTS {$Table_Name}(
-        Opening_Number INT,
-        Candidate_Number INT,
-        Total_Hours_Worked FLOAT
-      ) Engine=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
 
-if ($conn->query($sql) === TRUE) 
-{
-  echo "Table created successfully";
-} else 
-{
-  echo "<br> Error creating table: " . $conn->error;
-}
+$Table_Name = "PLACEMENT";
+
+
+//Make sure the last elemnt doesn't a comma
+$Table_Signature = [
+  "Opening_Number" => " Opening_Number INT,",
+  "Candidate_Number" => "Candidate_Number INT,",
+  "Total_Hours_Worked" => "Total_Hours_Worked FLOAT"
+];
+
+Create_Table($conn, $Table_Name, $Table_Signature);
 
 $sql = "INSERT INTO {$Table_Name}(Opening_Number, Candidate_Number, Total_Hours_Worked) VALUES 
 ('$_GET[Opening_Number]', '$_GET[Candidate_Number]', '$_GET[Total_Hours_Worked]')";
