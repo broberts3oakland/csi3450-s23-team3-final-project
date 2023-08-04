@@ -30,10 +30,10 @@ $Values_from_UI = [$_GET['Opening_Number'], $_GET['Candidate_Number'], $_GET['To
 // Make sure there's a space and comma after each value. Last value won't be affected
 $Values_as_Single_String =  implode(", ",$Values_from_UI);
 
-Insert_Values_Into_Table($conn, $Table_Name, $Table_Signature, $Values_as_Single_String);
+$Boolean_of_Inserting_Values = Insert_Values_Into_Table($conn, $Table_Name, $Table_Signature, $Values_as_Single_String);
 
-Print_Input($Values_as_Single_String);
-// SELECT_All_from_Query($conn, $Table_Name);
+Print_Input($Boolean_of_Inserting_Values, $Values_as_Single_String);
+
 
 echo "<form class='row g-2' action='placement_table.php' method='GET'>";
 echo "<div class='col-auto'>";
