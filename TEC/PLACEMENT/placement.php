@@ -7,30 +7,8 @@
   </head>
   <body>
     <?php
-
-$servername = "localhost";
-$username = "test";
-$password = "test";
-
-// Create connection
-$conn = mysqli_connect($servername, $username, $password);
-// Check connection
-if (!$conn) 
-{
-    echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
-
-$Database_Name = "TEC";
-$sql = "CREATE DATABASE IF NOT EXISTS {$Database_Name}";
-if ($conn->query($sql) === TRUE) 
-{
-  //Switch database
-  $conn -> select_db($Database_Name);
-} 
-else 
-{
-  echo "<br>Error creating database: " . $conn->error;
-}
+require_once('database.php');
+$conn = Connect_to_Database();
 
 $Table_Name = "PLACEMENT";
 $sql = "CREATE TABLE IF NOT EXISTS {$Table_Name}(
