@@ -34,24 +34,25 @@ if ($conn->query($sql) === TRUE)
   echo "<br> Error: " . $sql . "<br>" . $conn->error;
 }
 
-$sql = "SELECT * FROM {$Table_Name}"; 
+SELECT_All_from_Query($conn, $Table_Name);
+// $sql = "SELECT * FROM {$Table_Name}"; 
 
-$result = $conn->query($sql);
-if ($result->num_rows > 0) 
-  {
+// $result = $conn->query($sql);
+// if ($result->num_rows > 0) 
+//   {
 
-    //Returns an array representing the fetched row, where each key in the array represents the name of one of the result set's columns
-    $row = $result->fetch_assoc();
-    
-    echo "<br> Opening Number {$row['Opening_Number']} was logged";
-    echo "<br> Candidate_Number {$row['Candidate_Number']} was logged";
-    echo "<br> Total_Hours_Worked {$row['Total_Hours_Worked']} was logged";
+//     //Returns an array representing the fetched row, where each key in the array represents the name of one of the result set's columns
+//     $row = $result->fetch_assoc();
 
-  } 
-  else 
-  {
-    echo "<br> 0 results";
-  }
+//     echo "<br> Opening Number {$row['Opening_Number']} was logged";
+//     echo "<br> Candidate_Number {$row['Candidate_Number']} was logged";
+//     echo "<br> Total_Hours_Worked {$row['Total_Hours_Worked']} was logged";
+
+//   } 
+//   else 
+//   {
+//     echo "<br> 0 results";
+//   }
 
 
   echo "<form class='row g-2' action='placement_table.php' method='GET'>";
