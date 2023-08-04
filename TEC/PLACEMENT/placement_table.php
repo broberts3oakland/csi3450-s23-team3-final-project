@@ -19,7 +19,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) 
   {
 
-    echo "<table class='table table-bordered'>";
+    echo "<table class='table table-bordered table-striped table-dark'>";
     echo "<thead>";
     echo   "<tr>";
     echo     "<th scope='col'>Opening Number</th>";
