@@ -30,7 +30,8 @@ $Values_as_Single_String =  implode(", ",$Values_from_UI);
 
 Insert_Values_Into_Table($conn, $Table_Name, $Table_Signature, $Values_as_Single_String);
 
-SELECT_All_from_Query($conn, $Table_Name);
+Print_Input($Values_as_Single_String);
+// SELECT_All_from_Query($conn, $Table_Name);
 
 echo "<form class='row g-2' action='placement_table.php' method='GET'>";
 echo "<div class='col-auto'>";
