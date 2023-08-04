@@ -7,18 +7,8 @@
   </head>
   <body>
     <?php
-
-$servername = "localhost";
-$username = "test";
-$password = "test";
-$Database_Name = "TEC";
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $Database_Name);
-// Check connection
-if (!$conn) 
-{
-    echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
+require_once('database.php');
+$conn = Connect_to_Database();
 
 $Table_Name = "PLACEMENT";
 $sql = "SELECT * FROM {$Table_Name}"; 
