@@ -23,14 +23,12 @@ $Table_Signature = [
 
 Create_Table($conn, $Table_Name, $Table_Signature);
 
-$sql = "INSERT INTO {$Table_Name}(Opening_Number, Candidate_Number, Total_Hours_Worked) VALUES 
-('$_GET[Opening_Number]', '$_GET[Candidate_Number]', '$_GET[Total_Hours_Worked]')";
-if ($conn->query($sql) === TRUE) 
-{
-  echo "<br> New record created successfully";
-} else {
-  echo "<br> Error: " . $sql . "<br>" . $conn->error;
-}
+$Values_from_UI = [$_GET['Opening_Number'], $_GET['Candidate_Number'], $_GET['Total_Hours_Worked']];
+
+// Make sure there's a space and comma after each value. Last value won't be affected
+$Values_as_Single_String =  implode(", ",$Values_from_UI);
+
+Insert_Values_Into_Table($conn, $Table_Name, $Table_Signature, $Values_as_Single_String);
 
 SELECT_All_from_Query($conn, $Table_Name);
 

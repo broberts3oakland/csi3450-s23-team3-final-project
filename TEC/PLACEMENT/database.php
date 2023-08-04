@@ -56,6 +56,7 @@ function SELECT_All_from_Query($conn, $Table_Name)
 function Create_Table($conn, $Table_Name, $Table_Signature)
 {
 
+    
     // Convert dictionary to array so it's easier to create the table
     $Columns =  implode(" ",$Table_Signature);
 
@@ -72,4 +73,22 @@ function Create_Table($conn, $Table_Name, $Table_Signature)
     }
 
 
+}
+
+function Insert_Values_Into_Table($conn, $Table_Name, $Table_Signature, $Values_as_Single_String)
+{
+    //Get list of keys because they're the columns
+    $Columns_Names = array_keys($Table_Signature);
+
+    //Make sure there's a space and comma after each column. Last column won't be affected
+    $Columns_Names_as_Single_String = implode(", ",$Columns_Names);
+    
+    $sql = "INSERT INTO {$Table_Name}({$Columns_Names_as_Single_String}) VALUES 
+    ({$Values_as_Single_String})";
+    if ($conn->query($sql) === TRUE) 
+    {
+        echo "<br> New record created successfully";
+    } else {
+        echo "<br> Error: " . $sql . "<br>" . $conn->error;
+    }
 }
