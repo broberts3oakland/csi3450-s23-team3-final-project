@@ -40,14 +40,13 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) 
   {
 
-    // output data of each row
-    while($row = $result->fetch_assoc()) 
-    {
-  
+    //Returns an array representing the fetched row, where each key in the array represents the name of one of the result set's columns
+    $row = $result->fetch_assoc();
+    
     echo "<br> Opening Number {$row['Opening_Number']} was logged";
     echo "<br> Candidate_Number {$row['Candidate_Number']} was logged";
     echo "<br> Total_Hours_Worked {$row['Total_Hours_Worked']} was logged";
-    }
+
   } 
   else 
   {
