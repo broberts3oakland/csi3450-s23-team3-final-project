@@ -63,13 +63,13 @@ function Create_Table($conn, $Table_Name, $Table_Signature)
         {$Columns}
       ) Engine=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
 
-if ($conn->query($sql) === TRUE) 
-{
-  echo "Table created successfully";
-} else 
-{
-  echo "<br> Error creating table: " . $conn->error;
-}
+    if ($conn->query($sql) === TRUE) 
+    {
+    echo "Table created successfully";
+    } else 
+    {
+    echo "<br> Error creating table: " . $conn->error;
+    }
 
 
 }
