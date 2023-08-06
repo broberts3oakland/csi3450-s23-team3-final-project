@@ -15,7 +15,7 @@ $conn = Connect_to_Database();
 
 $Table_Name = "PLACEMENT";
 
-
+// TODO Change table structure to match this table
 //Make sure the last elemnt doesn't a comma
 $Table_Signature = [
   "Opening_Number" => " Opening_Number INT,",
