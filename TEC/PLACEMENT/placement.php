@@ -9,7 +9,7 @@
   </head>
   <body>
     <?php
-require_once('database.php');
+require_once('../database.php');
 $conn = Connect_to_Database();
 
 
