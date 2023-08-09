@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>TEC</title>
+  <!-- 
+      Mermaid documentation:
+     https://mermaid.js.org/syntax/entityRelationshipDiagram.html
+  -->
+  
+  <!-- Load Mermaid CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.css">
+
+  <link rel="stylesheet" href="css/diag.css">
+
+</head>
+<body>
+
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs' 
+  </script>  
+
+  <!-- Initialize Mermaid -->
+  <script>
+    // Use the 'mermaid' global object to initialize the diagram
+    mermaid.initialize({
+      startOnLoad: true,
+      sequence: { showSequenceNumbers: true },
+    });
+</script>
+
+<section>
+
+<h1 style="text-align: center;">TEC</h1>
+
+
+
+<!-- 
+Sample taken from DatabaseAnswers.org 
+https://datamodels.databases.biz
+-->
+ 
+ <div class="mermaid" style="text-align: center">
+
+---
+title: Entity Relationship Model
+---
+erDiagram
+   
+    Candidate {
+		int CANDIDATE_ID PK 
+        string FIRST_NAME
+        string LAST_NAME
+        int AGE
+        int SOCIAL_SECURITY_NUMBER
+        date DATE_OF_REGISTRATION 
+		int JOB_HISTORY  
+		int COURSE_TAKING
+        int QUALIFICATION_CODE FK
+    }
+	
+	Company{
+		int COMPANY_ID PK
+        string COMPANY_NAME
+        int EMPLOYEES_REQUESTING 
+		int OPENING_ID
+    }
+	
+	Course{
+		int COURSE_ID PK
+        int SESSION_ID FK
+        int PREREQUISITES
+        int QUALIFICATION_CODE FK
+    }
+	
+	Job_History{
+		int CANDIDATE_ID PK, FK
+        string PAST_JOB 
+	}
+	
+	Opening{
+		int OPENING_NUMBER PK
+        int COMPANY_ID FK
+        string COMPANY_NAME
+        date STARTING_DATE
+        int REQUIRED_QUALIFICATIONS 
+        int MAIN_QUALIFICATION 
+        int CANDIDATE_QUALIFICATION 
+	}
+	
+	Placement{
+		int OPENING_NUMBER PK, FK
+		int CANDIDATE_ID FK
+		int TOTAL_HOURS_WORKED
+	}
+	
+	Qualification{
+		int QUALIFICATION_CODE PK
+        int COURSE_ID FK
+        string DESCRIPTION
+    }
+	
+    Session{
+        int SESSION_ID PK
+        int COURSE_ID FK
+        int TOTAL_ENROLLED 
+        int TOTAL_FEES 
+        int MAX_CAPACITY
+    }
+
+    
+Session }o--|| Course : ""
+Qualification }o--|| Course : ""
+Placement }o--|| Candidate : ""
+Placement }o--|| Opening : ""
+Opening }o--|| Company : ""
+Job_History }o--|| Candidate : ""
+Course }o--|| Session : ""
+Course }o--|| Qualification : ""
+Candidate }o--|| Qualification : ""
+
+
+
+</div>
+ 
+<br>
+
+
+
+ <div class="mermaid" style="text-align: center">
+sequenceDiagram
+    
+
+
+</div>
+
+
+  
+</section>
+
+</body>
+</html>
