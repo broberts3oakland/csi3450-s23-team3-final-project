@@ -3,7 +3,7 @@ function Create_All_Tables($conn)
 {
 
   $sql = "CREATE TABLE IF NOT EXISTS CANDIDATE(
-      CANDIDATE_ID INT(32),
+      CANDIDATE_ID INT(32) UNIQUE,
       FIRST_NAME VARCHAR(30),
       LAST_NAME VARCHAR(30),
       AGE INT(32),
@@ -31,7 +31,7 @@ function Create_All_Tables($conn)
       ) Engine=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
       CREATE TABLE IF NOT EXISTS JOB_HISTORY(
-      CANDIDATE_ID INT(32),
+      CANDIDATE_ID INT(32) UNIQUE,
       PAST_JOB VARCHAR(50),
       PRIMARY KEY (CANDIDATE_ID)
       ) Engine=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -64,7 +64,7 @@ function Create_All_Tables($conn)
 
       CREATE TABLE IF NOT EXISTS PLACEMENT(
         OPENING_ID INT(32),
-        CANDIDATE_ID INT(32),
+        CANDIDATE_ID INT(32) UNIQUE,
         TOTAL_HOURS_WORKED FLOAT,
         PRIMARY KEY(OPENING_ID)
       ) Engine=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
