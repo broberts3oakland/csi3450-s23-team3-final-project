@@ -10,7 +10,7 @@ function Create_All_Tables($conn)
       DATE_OF_REGRISTRATION DATE,
       JOB_HISTORY INT,
       COURSE_TAKING INT,
-      QUALIFICATION_CODE INT,
+      QUALIFICATION_CODE VARCHAR(50),
       PRIMARY KEY (CANDIDATE_ID)
     ) Engine=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
     
