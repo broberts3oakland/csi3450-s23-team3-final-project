@@ -26,7 +26,8 @@ function Create_All_Tables($conn)
       COURSE_ID INT(32),
       SESSION_ID INT(32),
       PREREQUISITES VARCHAR(50),
-      QUALIFICATIOIN_CODE VARCHAR(50)
+      QUALIFICATIOIN_CODE VARCHAR(50),
+      PRIMARY KEY(COURSE_ID)
       ) Engine=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
       CREATE TABLE IF NOT EXISTS JOB_HISTORY(
@@ -57,7 +58,8 @@ function Create_All_Tables($conn)
       COURSE_ID INT(32),
       TOTAL_ENROLLED INT,
       TOTAL_FEES FLOAT,
-      MAX_CAPACITY INT
+      MAX_CAPACITY INT,
+      PRIMARY KEY (SESSION_ID)
       ) Engine=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
       CREATE TABLE IF NOT EXISTS PLACEMENT(
