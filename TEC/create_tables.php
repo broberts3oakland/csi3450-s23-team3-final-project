@@ -18,7 +18,7 @@ function Create_All_Tables($conn)
       COMPANY_ID INT(32),
       COMPANY_TEXT VARCHAR(50),
       EMPLOYEES_REQUESTING INT,
-      OPENING_ID INT
+      OPENING_ID INT,
       PRIMARY KEY (COMPANY_ID)
       ) Engine=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
