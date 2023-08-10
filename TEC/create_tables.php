@@ -30,7 +30,8 @@ function Create_All_Tables($conn)
 
       CREATE TABLE IF NOT EXISTS JOB_HISTORY(
       CANDIDATE_ID INT,
-      PAST_JOB VARCHAR(50)
+      PAST_JOB VARCHAR(50),
+      PRIMARY KEY (CANDIDATE_ID)
       ) Engine=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
@@ -41,7 +42,9 @@ function Create_All_Tables($conn)
       COMPANY_NAME VARCHAR(200),
       STARTING_DATE DATE,
       MAIN_QUALIFICATION VARCHAR(11),
-      REQUIRED_QUALIFCATIONS INT
+      REQUIRED_QUALIFCATIONS INT,
+      PRIMARY KEY (OPENING_NUMBER)
+
       ) Engine=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
