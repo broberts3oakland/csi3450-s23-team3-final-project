@@ -68,7 +68,12 @@ function Create_All_Tables($conn)
         TOTAL_HOURS_WORKED FLOAT,
         PRIMARY KEY(OPENING_NUMBER)
       ) Engine=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-    ";
+    
+
+    ALTER TABLE CANDIDATE ADD FOREIGN KEY (CANDIDATE_ID) REFERENCES PLACEMENT(CANDIDATE_ID);
+    ALTER TABLE CANDIDATE ADD FOREIGN KEY (CANDIDATE_ID) REFERENCES JOB_HISTORY(CANDIDATE_ID);
+    
+     ";
 
     if ($conn->multi_query($sql) === TRUE) 
     {
