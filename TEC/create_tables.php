@@ -59,6 +59,12 @@ function Create_All_Tables($conn)
         MAX_CAPACITY INT
         ) Engine=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+        CREATE TABLE IF NOT EXISTS PLACEMENT(
+          OPENING_NUMBER INT,
+          CANDIDATE_ID INT(32),
+          TOTAL_HOURS_WORKED FLOAT
+        ) Engine=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 
 
 
