@@ -14,19 +14,19 @@ require_once('../redo_tables.php');
 $conn = Connect_to_Database();
 Create_All_Tables($conn);
 
-$Table_Name = "PLACEMENT";
+$Table_Name = "CANDIDATE";
 
-// TODO Change table structure to match this table
-//Make sure the last elemnt doesn't a comma
 $Table_Signature = [
-  "Opening_Number" => " Opening_Number INT,",
-  "Candidate_Number" => "Candidate_Number INT,",
-  "Total_Hours_Worked" => "Total_Hours_Worked FLOAT"
+  "CANDIDATE_ID" => " CANDIDATE_ID,",
+  "FIRST_NAME" => "FIRST_NAME,",
+  "LAST_NAME" => "LAST_NAME",
+  "AGE" => "AGE",
+  "SOCIAL_SECURITY" => "SOCIAL_SECURITY",
+  "DATE_OF_REGRISTRATION" => "DATE_OF_REGRISTRATION)"
 ];
 
-Create_Table($conn, $Table_Name, $Table_Signature);
-
-$Values_from_UI = [$_GET['Opening_Number'], $_GET['Candidate_Number'], $_GET['Total_Hours_Worked']];
+$Values_from_UI = [$_GET['Candidate_ID'], $_GET['First_Name'], $_GET['Last_Name'], 
+                $_GET['Age'], $_GET['Social_Security'], $_GET['Date_of_Regristration']];
 
 // Make sure there's a space and comma after each value. Last value won't be affected
 $Values_as_Single_String =  implode(", ",$Values_from_UI);
