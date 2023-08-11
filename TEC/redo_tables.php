@@ -47,18 +47,16 @@ function Create_All_Tables($conn)
         PRIMARY KEY (QUALIFICATION_CODE)
     ) Engine=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-
-
-CREATE TABLE IF NOT EXISTS SESSION(
-        SESSION_ID INT(32),
-        COURSE_ID INT(32),
-        TOTAL_ENROLLED INT,
-        TOTAL_FEES FLOAT,
-        MAX_CAPACITY INT,
-        STARTING_TIME TIMESTAMP,
-        END_TIME TIMESTAMP,
-        PRIMARY KEY (SESSION_ID)
-    ) Engine=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+    CREATE TABLE IF NOT EXISTS SESSION(
+            SESSION_ID INT(32),
+            COURSE_ID INT(32),
+            TOTAL_ENROLLED INT,
+            TOTAL_FEES FLOAT,
+            MAX_CAPACITY INT,
+            STARTING_TIME TIMESTAMP,
+            END_TIME TIMESTAMP,
+            PRIMARY KEY (SESSION_ID)
+        ) Engine=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
     CREATE TABLE IF NOT EXISTS PLACEMENT(
         CANDIDATE_ID INT(32),
