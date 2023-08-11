@@ -68,6 +68,13 @@ function Create_All_Tables($conn)
         TOTAL_HOURS_WORKED FLOAT,
         PRIMARY KEY(OPENING_ID)
       ) Engine=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+      CREATE TABLE IF NOT EXISTS Potential_Hire(
+        HIRE_ID INT(32),
+        CANDIDATE_ID INT(32),
+        OPENING_ID INT(32),
+        PRIMARY KEY(HIRE_ID)
+      ) Engine=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
     
     ALTER TABLE PLACEMENT ADD CONSTRAINT FOREIGN KEY (CANDIDATE_ID) REFERENCES CANDIDATE(CANDIDATE_ID);
     
