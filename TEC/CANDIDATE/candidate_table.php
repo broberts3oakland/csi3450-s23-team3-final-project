@@ -32,18 +32,17 @@ if ($result->num_rows > 0)
     echo "</thead>";
 
     echo "<tbody>";
-
+    
     // output data of each row
     while($row = $result->fetch_assoc()) 
     {
-  
     echo   "<tr>";
-    echo     "<th scope='row'>{$row['Candidate_ID']}</th>";
-    echo     "<td>{$row['First_Name']}</td>";
-    echo     "<td>{$row['Last_Name']}</td>";
-    echo     "<td>{$row['Age']}</td>";
-    echo     "<td>{$row['Social_Security']}</td>";
-    echo     "<td>{$row['Date_of_Regristration']}</td>";
+    echo     "<th scope='row'>{$row['CANDIDATE_ID']}</th>";
+    echo     "<td>{$row['FIRST_NAME']}</td>";
+    echo     "<td>{$row['LAST_NAME']}</td>";
+    echo     "<td>{$row['AGE']}</td>";
+    echo     "<td>{$row['SOCIAL_SECURITY']}</td>";
+    echo     "<td>{$row['DATE_OF_REGRISTRATION']}</td>";
     echo   "</tr>";
 
     }

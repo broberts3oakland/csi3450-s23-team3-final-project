@@ -12,7 +12,7 @@
 require_once('../database.php');
 require_once('../redo_tables.php');
 $conn = Connect_to_Database();
-Create_All_Tables($conn);
+Create_All_Tables();
 
 $Table_Name = "CANDIDATE";
 
@@ -25,15 +25,31 @@ $Table_Signature = [
   "DATE_OF_REGRISTRATION" => "DATE_OF_REGRISTRATION"
 ];
 
-$Values_from_UI = [$_GET['Candidate_ID'], $_GET['First_Name'], $_GET['Last_Name'], 
-                $_GET['Age'], $_GET['Social_Security'], $_GET['Date_of_Regristration']];
+    //Get list of keys because they're the columns
+    $Columns_Names = array_keys($Table_Signature);
 
-// Make sure there's a space and comma after each value. Last value won't be affected
-$Values_as_Single_String =  implode(", ",$Values_from_UI);
+    //Make sure there's a space and comma after each column. Last column won't be affected
+    $Columns_Names_as_Single_String = implode(", ",$Columns_Names);
+    
+    $val1 = $_GET['Candidate_ID'];
+    $val2 = $_GET['First_Name'];
+    $val3 = $_GET['Last_Name'];
+    $val4 = $_GET['Age'];
+    $val5 = $_GET['Social_Security'];
+    $val6 = $_GET['Date_of_Regristration'];
 
-$Boolean_of_Inserting_Values = Insert_Values_Into_Table($conn, $Table_Name, $Table_Signature, $Values_as_Single_String);
+    $sql = "INSERT INTO {$Table_Name}({$Columns_Names_as_Single_String}) VALUES ($val1, '$val2', '$val3', $val4, '$val5', '$val6')";
+    if ($conn->query($sql) === TRUE) 
+    {
+        // echo $conn->query($sql);
+        echo "<br> New record created successfully";
+        return true;
+    } else {
+        echo "<br> Error: " . $sql . "<br>" . $conn->error;
+        return false;
+    }
 
-Print_Input($Boolean_of_Inserting_Values, $Values_as_Single_String);
+
 
 
 echo "<form class='row g-2' action='placement_table.php' method='GET'>";

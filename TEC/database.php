@@ -74,7 +74,7 @@ function Insert_Values_Into_Table($conn, $Table_Name, $Table_Signature, $Values_
     $Columns_Names_as_Single_String = implode(", ",$Columns_Names);
     
     $sql = "INSERT INTO {$Table_Name}({$Columns_Names_as_Single_String}) VALUES 
-    ({$Values_as_Single_String})";
+    ($Values_as_Single_String)";
     if ($conn->query($sql) === TRUE) 
     {
         // echo $conn->query($sql);

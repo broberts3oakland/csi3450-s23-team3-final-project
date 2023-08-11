@@ -1,7 +1,9 @@
 
 <?php
-function Create_All_Tables($conn)
+require_once('database.php');
+function Create_All_Tables()
 {
+    $conn = Connect_to_Database();
     $sql = "CREATE TABLE IF NOT EXISTS CANDIDATE(
         CANDIDATE_ID INT(32) UNIQUE NOT NULL,
         FIRST_NAME VARCHAR(30),
