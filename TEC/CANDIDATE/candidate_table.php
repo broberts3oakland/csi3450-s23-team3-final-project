@@ -12,7 +12,7 @@
 require_once('../database.php');
 $conn = Connect_to_Database();
 
-$Table_Name = "PLACEMENT";
+$Table_Name = "CANDIDATE";
 $sql = "SELECT * FROM {$Table_Name}"; 
 
 $result = $conn->query($sql);
@@ -22,9 +22,12 @@ if ($result->num_rows > 0)
     echo "<table class='table table-bordered table-striped table-dark'>";
     echo "<thead>";
     echo   "<tr>";
-    echo     "<th scope='col'>Opening Number</th>";
-    echo     "<th scope='col'>Candidate Number</th>";
-    echo     "<th scope='col'>Total Hours Worked</th>";
+    echo     "<th scope='col'>CANDIDATE_ID</th>";
+    echo     "<th scope='col'>FIRST_NAME</th>";
+    echo     "<th scope='col'>LAST_NAME</th>";
+    echo     "<th scope='col'>AGE</th>";
+    echo     "<th scope='col'>SOCIAL_SECURITY</th>";
+    echo     "<th scope='col'>DATE_OF_REGRISTRATION</th>";
     echo  "</tr>";
     echo "</thead>";
 
@@ -35,9 +38,12 @@ if ($result->num_rows > 0)
     {
   
     echo   "<tr>";
-    echo     "<th scope='row'>{$row['Opening_Number']}</th>";
-    echo     "<td>{$row['Candidate_Number']}</td>";
-    echo     "<td>{$row['Total_Hours_Worked']}</td>";
+    echo     "<th scope='row'>{$row['Candidate_ID']}</th>";
+    echo     "<td>{$row['First_Name']}</td>";
+    echo     "<td>{$row['Last_Name']}</td>";
+    echo     "<td>{$row['Age']}</td>";
+    echo     "<td>{$row['Social_Security']}</td>";
+    echo     "<td>{$row['Date_of_Regristration']}</td>";
     echo   "</tr>";
 
     }
