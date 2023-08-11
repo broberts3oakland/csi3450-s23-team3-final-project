@@ -22,7 +22,7 @@ $Table_Signature = [
   "LAST_NAME" => "LAST_NAME",
   "AGE" => "AGE",
   "SOCIAL_SECURITY" => "SOCIAL_SECURITY",
-  "DATE_OF_REGRISTRATION" => "DATE_OF_REGRISTRATION)"
+  "DATE_OF_REGRISTRATION" => "DATE_OF_REGRISTRATION"
 ];
 
 $Values_from_UI = [$_GET['Candidate_ID'], $_GET['First_Name'], $_GET['Last_Name'], 
