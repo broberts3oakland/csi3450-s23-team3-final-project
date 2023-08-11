@@ -10,8 +10,9 @@
   <body>
     <?php
 require_once('../database.php');
+require_once('../redo_tables.php');
 $conn = Connect_to_Database();
-
+Create_All_Tables($conn);
 
 $Table_Name = "PLACEMENT";
 
