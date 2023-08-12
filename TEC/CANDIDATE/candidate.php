@@ -11,6 +11,14 @@
     <?php
 require_once('../database.php');
 require_once('../redo_tables.php');
+
+
+echo "<form class='row g-2' action='candidate_table.php' method='GET'>";
+echo "<div class='col-auto'>";
+echo "<button type='submit' class='btn btn-primary mb-3'>Display Table</button>";
+echo "</div>";
+echo "</form>";
+
 $conn = Connect_to_Database();
 Create_All_Tables();
 
@@ -25,7 +33,6 @@ $Columns_Names = [
   "DATE_OF_REGRISTRATION",
 ];
 
-
   $Columns_Names_as_Single_String = implode(", ",$Columns_Names);
   
   $val1 = $_GET['Candidate_ID'];
@@ -37,16 +44,18 @@ $Columns_Names = [
 
   $Math_Random = rand(0,100000);
 
-  $sql = "INSERT INTO {$Table_Name}({$Columns_Names_as_Single_String}) VALUES ($Math_Random, 'werw', 'dfsd', $Math_Random, '321-34-1513', '12-01-2021')";
+  $sql = "INSERT INTO {$Table_Name}({$Columns_Names_as_Single_String}) VALUES ($Math_Random, 'werw', 'dfsd', $Math_Random, '321-34-1513', '2021-12-01')";
   if ($conn->query($sql) === TRUE) 
   {
       // echo $conn->query($sql);
       echo "<br> New record created successfully";
       return true;
-  } else {
+  } 
+  else 
+  {
       echo "<br> Error: " . $sql . "<br>" . $conn->error;
       return false;
-  }
+  };
 
 
   $sql = "INSERT INTO {$Table_Name}({$Columns_Names_as_Single_String}) VALUES ($val1, '$val2', '$val3', $val4, '$val5', '$val6')";
@@ -55,19 +64,15 @@ $Columns_Names = [
       // echo $conn->query($sql);
       echo "<br> New record created successfully";
       return true;
-  } else {
+  } else 
+  {
       echo "<br> Error: " . $sql . "<br>" . $conn->error;
       return false;
-  }
+  };
 
 
 
 
-echo "<form class='row g-2' action='placement_table.php' method='GET'>";
-echo "<div class='col-auto'>";
-echo "<button type='submit' class='btn btn-primary mb-3'>Display Table</button>";
-echo "</div>";
-echo "</form>";
 
 
     // ?>
