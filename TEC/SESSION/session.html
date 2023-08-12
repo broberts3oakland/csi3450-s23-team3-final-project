@@ -8,30 +8,55 @@
   </head>
   <body>
 
-  <!-- TODO Change amount of inputs to match this table -->
+  
   <form class="row g-2" action="session.php" method="GET">
     <div class="mb-3 row">
-      <label class="col-sm-2 col-form-label">Opening Number</label>
+      <label class="col-sm-2 col-form-label">Session Code</label>
       <div class="col-sm-2">
-        <input type="text" class="form-control" name="Opening_Number">
+        <input type="text" class="form-control" name="SESSION_ID">
       </div>
     </div>
     <div class="mb-3 row">
-      <label class="col-sm-2 col-form-label">Candidate Number</label>
+      <label class="col-sm-2 col-form-label">Course ID</label>
       <div class="col-sm-2">
-        <input type="text" class="form-control" name="Candidate_Number">
+        <input type="text" class="form-control" name="COURSE_ID">
       </div>
     </div>
     <div class="mb-3 row">
-      <label class="col-sm-2 col-form-label">Total Hours Worked</label>
+      <label class="col-sm-2 col-form-label">Total Enrolled</label>
       <div class="col-sm-2">
-        <input type="text" class="form-control" name="Total_Hours_Worked">
+        <input type="text" class="form-control" name="TOTAL_ENROLLED">
       </div>
     </div>
-    <div class="col-auto">
-      <button type="submit" class="btn btn-primary mb-3">Log Info</button>
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">Total Fees</label>
+      <div class="col-sm-2">
+        <input type="text" class="form-control" name="TOTAL_FEES">
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">Max Capcacity</label>
+      <div class="col-sm-2">
+        <input type="text" class="form-control" name="MAX_CAPACITY">
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">Starting Time</label>
+      <div class="col-sm-2">
+        <input type="text" class="form-control" name="STARTING_TIME">
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">Ending Time</label>
+      <div class="col-sm-2">
+        <input type="text" class="form-control" name="ENDING_TIME">
+      </div>
     </div>
 
+
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary mb-3">Sumbit</button>
+    </div>
   </form>
   
 <form class="row g-2" action="session_table.php" method="GET">

@@ -11,8 +11,8 @@
     <?php
 require_once('../database.php');
 $conn = Connect_to_Database();
-// TODO Change table structure to match this table
-$Table_Name = "PLACEMENT";
+
+$Table_Name = "SESSION";
 $sql = "SELECT * FROM {$Table_Name}"; 
 
 $result = $conn->query($sql);
@@ -22,22 +22,29 @@ if ($result->num_rows > 0)
     echo "<table class='table table-bordered table-striped table-dark'>";
     echo "<thead>";
     echo   "<tr>";
-    echo     "<th scope='col'>Opening Number</th>";
-    echo     "<th scope='col'>Candidate Number</th>";
-    echo     "<th scope='col'>Total Hours Worked</th>";
+    echo     "<th scope='col'>SESSION_ID</th>";
+    echo     "<th scope='col'>COURSE_ID</th>";
+    echo     "<th scope='col'>TOTAL_ENROLLED</th>";
+    echo     "<th scope='col'>TOTAL_FEES</th>";
+    echo     "<th scope='col'>MAX_CAPACITY</th>";
+    echo     "<th scope='col'>STARTING_TIME</th>";
+    echo     "<th scope='col'>ENDING_TIME</th>";
     echo  "</tr>";
     echo "</thead>";
 
     echo "<tbody>";
-
+    
     // output data of each row
     while($row = $result->fetch_assoc()) 
     {
-  
     echo   "<tr>";
-    echo     "<th scope='row'>{$row['Opening_Number']}</th>";
-    echo     "<td>{$row['Candidate_Number']}</td>";
-    echo     "<td>{$row['Total_Hours_Worked']}</td>";
+    echo     "<th scope='row'>{$row['SESSION_ID']}</th>";
+    echo     "<td>{$row['COURSE_ID']}</td>";
+    echo     "<td>{$row['TOTAL_ENROLLED']}</td>";
+    echo     "<td>{$row['TOTAL_FEES']}</td>";
+    echo     "<td>{$row['MAX_CAPACITY']}</td>";
+    echo     "<td>{$row['STARTING_TIME']}</td>";
+    echo     "<td>{$row['ENDING_TIME']}</td>";
     echo   "</tr>";
 
     }

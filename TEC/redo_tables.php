@@ -59,8 +59,8 @@ function Create_All_Tables()
         ) Engine=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
     CREATE TABLE IF NOT EXISTS PLACEMENT(
-        CANDIDATE_ID INT(32),
         OPENING_ID INT(32),
+        CANDIDATE_ID INT(32),
         TOTAL_HOURS_WORKED FLOAT,
         PRIMARY KEY(CANDIDATE_ID, OPENING_ID)
     ) Engine=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
