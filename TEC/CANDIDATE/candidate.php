@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Log Info</title>
+    <title></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </head>
@@ -16,38 +16,35 @@ Create_All_Tables();
 
 $Table_Name = "CANDIDATE";
 
-$Table_Signature = [
-  "CANDIDATE_ID" => " CANDIDATE_ID,",
-  "FIRST_NAME" => "FIRST_NAME,",
-  "LAST_NAME" => "LAST_NAME",
-  "AGE" => "AGE",
-  "SOCIAL_SECURITY" => "SOCIAL_SECURITY",
-  "DATE_OF_REGRISTRATION" => "DATE_OF_REGRISTRATION"
+$Columns_Names = [
+  "CANDIDATE_ID",
+  "FIRST_NAME",
+  "LAST_NAME",
+  "AGE",
+  "SOCIAL_SECURITY",
+  "DATE_OF_REGRISTRATION",
 ];
 
-    //Get list of keys because they're the columns
-    $Columns_Names = array_keys($Table_Signature);
 
-    //Make sure there's a space and comma after each column. Last column won't be affected
-    $Columns_Names_as_Single_String = implode(", ",$Columns_Names);
-    
-    $val1 = $_GET['Candidate_ID'];
-    $val2 = $_GET['First_Name'];
-    $val3 = $_GET['Last_Name'];
-    $val4 = $_GET['Age'];
-    $val5 = $_GET['Social_Security'];
-    $val6 = $_GET['Date_of_Regristration'];
+  $Columns_Names_as_Single_String = implode(", ",$Columns_Names);
+  
+  $val1 = $_GET['Candidate_ID'];
+  $val2 = $_GET['First_Name'];
+  $val3 = $_GET['Last_Name'];
+  $val4 = $_GET['Age'];
+  $val5 = $_GET['Social_Security'];
+  $val6 = $_GET['Date_of_Regristration'];
 
-    $sql = "INSERT INTO {$Table_Name}({$Columns_Names_as_Single_String}) VALUES ($val1, '$val2', '$val3', $val4, '$val5', '$val6')";
-    if ($conn->query($sql) === TRUE) 
-    {
-        // echo $conn->query($sql);
-        echo "<br> New record created successfully";
-        return true;
-    } else {
-        echo "<br> Error: " . $sql . "<br>" . $conn->error;
-        return false;
-    }
+  $sql = "INSERT INTO {$Table_Name}({$Columns_Names_as_Single_String}) VALUES ($val1, '$val2', '$val3', $val4, '$val5', '$val6')";
+  if ($conn->query($sql) === TRUE) 
+  {
+      // echo $conn->query($sql);
+      echo "<br> New record created successfully";
+      return true;
+  } else {
+      echo "<br> Error: " . $sql . "<br>" . $conn->error;
+      return false;
+  }
 
 
 
