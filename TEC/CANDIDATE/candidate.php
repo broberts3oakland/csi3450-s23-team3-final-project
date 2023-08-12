@@ -37,7 +37,7 @@ $Columns_Names = [
 
   $Math_Random = rand(0,100000);
 
-  $sql = "INSERT INTO {$Table_Name}({$Columns_Names_as_Single_String}) VALUES ($Math_Random, '$val2', '$val3', $Math_Random, '$val5', '$val6')";
+  $sql = "INSERT INTO {$Table_Name}({$Columns_Names_as_Single_String}) VALUES ($Math_Random, 'werw', 'dfsd', $Math_Random, '321-34-1513', '12-01-2021')";
   if ($conn->query($sql) === TRUE) 
   {
       // echo $conn->query($sql);
