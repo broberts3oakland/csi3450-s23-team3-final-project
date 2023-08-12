@@ -74,7 +74,7 @@ function Create_All_Tables()
     CREATE TABLE IF NOT EXISTS PAYING(
         CANDIDATE_ID INT(32),
         SESSION_ID INT(32),
-        AMOUNT_PAID FLOAT
+        AMOUNT_PAID FLOAT,
         PRIMARY KEY (CANDIDATE_ID, SESSION_ID)
     ) Engine=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
