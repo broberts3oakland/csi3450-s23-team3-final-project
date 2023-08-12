@@ -26,7 +26,7 @@ if ($result->num_rows > 0)
     echo     "<th scope='col'>COMPANY_ID</th>";
     echo     "<th scope='col'>STARTING_DATE</th>";
     echo     "<th scope='col'>REQUIRED_QUALIFICATIONS</th>";
-    echo     "<th scope='col'>MAIN_QUALIFICATION</th>";
+    echo     "<th scope='col'>MAIN_QUALIFICATION_CODE</th>";
     echo  "</tr>";
     echo "</thead>";
 
@@ -40,7 +40,7 @@ if ($result->num_rows > 0)
     echo     "<td>{$row['COMPANY_ID']}</td>";
     echo     "<td>{$row['STARTING_DATE']}</td>";
     echo     "<td>{$row['REQUIRED_QUALIFICATIONS']}</td>";
-    echo     "<td>{$row['MAIN_QUALIFICATION']}</td>";
+    echo     "<td>{$row['MAIN_QUALIFICATION_CODE']}</td>";
     echo   "</tr>";
 
     }

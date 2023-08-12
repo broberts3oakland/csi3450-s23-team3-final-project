@@ -29,7 +29,7 @@ $Columns_Names = [
   "COMPANY_ID",
   "STARTING_DATE",
   "REQUIRED_QUALIFICATIONS",
-  "MAIN_QUALIFICATION"
+  "MAIN_QUALIFICATION_CODE"
 ];
 
   $Columns_Names_as_Single_String = implode(", ",$Columns_Names);
@@ -38,7 +38,7 @@ $Columns_Names = [
   $val2 = $_GET['COMPANY_ID'];
   $val3 = $_GET['STARTING_DATE'];
   $val4 = $_GET['REQUIRED_QUALIFICATIONS'];
-  $val5 = $_GET['MAIN_QUALIFICATION'];
+  $val5 = $_GET['MAIN_QUALIFICATION_CODE'];
 
   $sql = "INSERT INTO {$Table_Name}({$Columns_Names_as_Single_String}) VALUES ($val1, $val2, '$val3', $val4, '$val5')";
   if ($conn->query($sql) === TRUE) 

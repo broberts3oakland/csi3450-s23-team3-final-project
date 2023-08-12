@@ -36,9 +36,8 @@ function Create_All_Tables()
         OPENING_ID INT(32),
         COMPANY_ID INT(32),
         STARTING_DATE DATE,
-        SPOTS_OPEN INT,
+        REQUIRED_QUALIFICATIONS INT,
         MAIN_QUALIFICATION_CODE VARCHAR(20),
-        REQUIRED_QUALIFCATIONS INT,
         PRIMARY KEY (OPENING_ID)
     ) Engine=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
