@@ -42,22 +42,6 @@ $Columns_Names = [
   $val5 = $_GET['Social_Security'];
   $val6 = $_GET['Date_of_Regristration'];
 
-  $Math_Random = rand(0,100000);
-
-  $sql = "INSERT INTO {$Table_Name}({$Columns_Names_as_Single_String}) VALUES ($Math_Random, 'werw', 'dfsd', $Math_Random, '321-34-1513', '2021-12-01')";
-  if ($conn->query($sql) === TRUE) 
-  {
-      // echo $conn->query($sql);
-      echo "<br> New record created successfully";
-      return true;
-  } 
-  else 
-  {
-      echo "<br> Error: " . $sql . "<br>" . $conn->error;
-      return false;
-  };
-
-
   $sql = "INSERT INTO {$Table_Name}({$Columns_Names_as_Single_String}) VALUES ($val1, '$val2', '$val3', $val4, '$val5', '$val6')";
   if ($conn->query($sql) === TRUE) 
   {

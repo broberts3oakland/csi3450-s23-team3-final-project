@@ -34,23 +34,6 @@ $Columns_Names = [
   $val1 = $_GET['COMPANY_ID'];
   $val2 = $_GET['COMPANY_NAME'];
 
-
-  $Math_Random = rand(0,100000);
-
-  $sql = "INSERT INTO {$Table_Name}({$Columns_Names_as_Single_String}) VALUES ($Math_Random, 'werw')";
-  if ($conn->query($sql) === TRUE) 
-  {
-      // echo $conn->query($sql);
-      echo "<br> New record created successfully";
-      return true;
-  } 
-  else 
-  {
-      echo "<br> Error: " . $sql . "<br>" . $conn->error;
-      return false;
-  };
-
-
   $sql = "INSERT INTO {$Table_Name}({$Columns_Names_as_Single_String}) VALUES ($val1, '$val2')";
   if ($conn->query($sql) === TRUE) 
   {
