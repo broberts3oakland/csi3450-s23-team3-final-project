@@ -8,33 +8,27 @@
   </head>
   <body>
 
-  <!-- TODO Change amount of inputs to match this table -->
+  
   <form class="row g-2" action="job_history.php" method="GET">
     <div class="mb-3 row">
-      <label class="col-sm-2 col-form-label">Opening Number</label>
+      <label class="col-sm-2 col-form-label">Candidate ID</label>
       <div class="col-sm-2">
-        <input type="text" class="form-control" name="Opening_Number">
+        <input type="text" class="form-control" name="CANDIDATE_ID">
       </div>
     </div>
     <div class="mb-3 row">
-      <label class="col-sm-2 col-form-label">Candidate Number</label>
+      <label class="col-sm-2 col-form-label">Past Job</label>
       <div class="col-sm-2">
-        <input type="text" class="form-control" name="Candidate_Number">
-      </div>
-    </div>
-    <div class="mb-3 row">
-      <label class="col-sm-2 col-form-label">Total Hours Worked</label>
-      <div class="col-sm-2">
-        <input type="text" class="form-control" name="Total_Hours_Worked">
+        <input type="text" class="form-control" name="PAST_JOB">
       </div>
     </div>
     <div class="col-auto">
-      <button type="submit" class="btn btn-primary mb-3">Log Info</button>
+      <button type="submit" class="btn btn-primary mb-3">Sumbit</button>
     </div>
 
   </form>
   
-<form class="row g-2" action="job_history_table.php" method="GET">
+<form class="row g-2" action="job_history.php" method="GET">
   <div class="col-auto">
     <button type="submit" class="btn btn-primary mb-3">Display Table</button>
   </div>

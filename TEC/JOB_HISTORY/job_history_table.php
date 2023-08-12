@@ -12,32 +12,29 @@
 require_once('../database.php');
 $conn = Connect_to_Database();
 
-$Table_Name = "PLACEMENT";
+$Table_Name = "JOB_HISTORY";
 $sql = "SELECT * FROM {$Table_Name}"; 
 
 $result = $conn->query($sql);
 if ($result->num_rows > 0) 
   {
-// TODO Change table structure to match this table
+
     echo "<table class='table table-bordered table-striped table-dark'>";
     echo "<thead>";
     echo   "<tr>";
-    echo     "<th scope='col'>Opening Number</th>";
-    echo     "<th scope='col'>Candidate Number</th>";
-    echo     "<th scope='col'>Total Hours Worked</th>";
+    echo     "<th scope='col'>CANDIDATE_ID</th>";
+    echo     "<th scope='col'>PAST_JOB</th>";
     echo  "</tr>";
     echo "</thead>";
 
     echo "<tbody>";
-
+    
     // output data of each row
     while($row = $result->fetch_assoc()) 
     {
-  
     echo   "<tr>";
-    echo     "<th scope='row'>{$row['Opening_Number']}</th>";
-    echo     "<td>{$row['Candidate_Number']}</td>";
-    echo     "<td>{$row['Total_Hours_Worked']}</td>";
+    echo     "<th scope='row'>{$row['CANDIDATE_ID']}</th>";
+    echo     "<td>{$row['PAST_JOB']}</td>";
     echo   "</tr>";
 
     }
