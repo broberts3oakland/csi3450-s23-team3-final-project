@@ -12,9 +12,9 @@
 require_once('../database.php');
 $conn = Connect_to_Database();
 
-$Table_Name = "PLACEMENT";
+$Table_Name = "OPENING";
 $sql = "SELECT * FROM {$Table_Name}"; 
-// TODO Change table structure to match this table
+
 $result = $conn->query($sql);
 if ($result->num_rows > 0) 
   {
@@ -22,22 +22,25 @@ if ($result->num_rows > 0)
     echo "<table class='table table-bordered table-striped table-dark'>";
     echo "<thead>";
     echo   "<tr>";
-    echo     "<th scope='col'>Opening Number</th>";
-    echo     "<th scope='col'>Candidate Number</th>";
-    echo     "<th scope='col'>Total Hours Worked</th>";
+    echo     "<th scope='col'>OPENING_ID</th>";
+    echo     "<th scope='col'>COMPANY_ID</th>";
+    echo     "<th scope='col'>STARTING_DATE</th>";
+    echo     "<th scope='col'>REQUIRED_QUALIFICATIONS</th>";
+    echo     "<th scope='col'>MAIN_QUALIFICATION</th>";
     echo  "</tr>";
     echo "</thead>";
 
     echo "<tbody>";
-
+    
     // output data of each row
     while($row = $result->fetch_assoc()) 
     {
-  
     echo   "<tr>";
-    echo     "<th scope='row'>{$row['Opening_Number']}</th>";
-    echo     "<td>{$row['Candidate_Number']}</td>";
-    echo     "<td>{$row['Total_Hours_Worked']}</td>";
+    echo     "<th scope='row'>{$row['OPENING_ID']}</th>";
+    echo     "<td>{$row['COMPANY_ID']}</td>";
+    echo     "<td>{$row['STARTING_DATE']}</td>";
+    echo     "<td>{$row['REQUIRED_QUALIFICATIONS']}</td>";
+    echo     "<td>{$row['MAIN_QUALIFICATION']}</td>";
     echo   "</tr>";
 
     }
