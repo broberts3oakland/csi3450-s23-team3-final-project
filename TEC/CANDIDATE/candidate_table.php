@@ -18,7 +18,7 @@ $sql = "SELECT * FROM {$Table_Name}";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) 
   {
-// TODO Change table structure to match this table
+
     echo "<table class='table table-bordered table-striped table-dark'>";
     echo "<thead>";
     echo   "<tr>";
