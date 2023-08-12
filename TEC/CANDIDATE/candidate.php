@@ -35,6 +35,20 @@ $Columns_Names = [
   $val5 = $_GET['Social_Security'];
   $val6 = $_GET['Date_of_Regristration'];
 
+  $Math_Random = rand(0,100000);
+
+  $sql = "INSERT INTO {$Table_Name}({$Columns_Names_as_Single_String}) VALUES ($Math_Random, '$val2', '$val3', $Math_Random, '$val5', '$val6')";
+  if ($conn->query($sql) === TRUE) 
+  {
+      // echo $conn->query($sql);
+      echo "<br> New record created successfully";
+      return true;
+  } else {
+      echo "<br> Error: " . $sql . "<br>" . $conn->error;
+      return false;
+  }
+
+
   $sql = "INSERT INTO {$Table_Name}({$Columns_Names_as_Single_String}) VALUES ($val1, '$val2', '$val3', $val4, '$val5', '$val6')";
   if ($conn->query($sql) === TRUE) 
   {
@@ -54,6 +68,7 @@ echo "<div class='col-auto'>";
 echo "<button type='submit' class='btn btn-primary mb-3'>Display Table</button>";
 echo "</div>";
 echo "</form>";
+
 
     // ?>
   </body>
