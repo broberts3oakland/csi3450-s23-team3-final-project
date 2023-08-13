@@ -10,7 +10,6 @@
   <body>
     <?php
 require_once('../database.php');
-require_once('../redo_tables.php');
 
 
 echo "<form class='row g-2' action='session_table.php' method='GET'>";
@@ -20,7 +19,6 @@ echo "</div>";
 echo "</form>";
 
 $conn = Connect_to_Database();
-Create_All_Tables();
 
 $Table_Name = "SESSION";
 
